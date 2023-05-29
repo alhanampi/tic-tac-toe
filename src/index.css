@@ -1,13 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Pangolin&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-image: url("./assets/grad3.jpg");
+  background-size: cover;
 }
+
+h1, h2 {
+  color: white;
+  margin-bottom: 100px;
+  font-family: 'Pangolin', cursive;
+  font-size: 3em;;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.squareBoard {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid white 6px;
+  box-shadow: 10px 11px 24px 3px rgb(101, 108, 147);
+  border-radius: 10px;
+}
+
+.square {
+  background-color: rgba(205, 228, 253, 0.6);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+

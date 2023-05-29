@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Pangolin&display=swap');
+
+.circle svg {
+  color: rgb(79, 136, 157);
+  opacity: 0;
+  animation: bounceIn 0.5s forwards;
+}
+
+.cross svg {
+  color: rgb(181, 93, 93);
+  opacity: 0;
+  animation: bounceIn 0.5s forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.winline {
+  position: absolute;
+  width: 450px;
+  height: 10px;
+  background-color: red;
+  z-index: 3;
+  animation: fadeUp 0.5s forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+
+  }
+  100% {
+    opacity: 1;
+
+  }
+}
+
+.winline.comb1 {
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.winline.comb2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.winline.comb3 {
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.winline.comb4 {
+  rotate: 90deg;
+  top: 50%;
+  left: 24%;
+  transform: translate(0%, -50%);
+}
+
+.winline.comb5 {
+  rotate: 90deg;
+  top: 50%;
+  left: 34%;
+  transform: translate(0%, -50%);
+}
+
+.winline.comb6 {
+  rotate: 90deg;
+  top: 50%;
+  left: 44.5%;
+  transform: translate(0%, -50%);
+}
+
+.winline.comb7 {
+  rotate: 45deg;
+  top: 53%;
+  left: 30.5%;
+  transform: translate(-6%, -50%);
+  width: 602px;
+  height: 8px;
+}
+
+.winline.comb8 {
+  rotate: -45deg;
+  top: 49%;
+  left: 30.5%;
+  transform: translate(-3%, -50%);
+  width: 602px;
+  height: 8px;
+}
+
+button {
+  background-color: rgb(54, 111, 132);
+  border: 6px solid rgb(54, 111, 132);
+  border-radius: 10px;
+  color: white;
+  font-size: 1.5em;
+  padding: 10px 50px;
+  position: absolute;
+  bottom: 70px;
+  cursor: pointer;
+  font-family: 'Pangolin', cursive;
+}
+
+button:hover {
+  background-color: rgb(79, 136, 157);
+  border-color: rgb(79, 136, 157);
+}
