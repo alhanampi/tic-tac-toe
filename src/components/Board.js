@@ -1,12 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import Square from "./Square";
 import "./styles.css";
+import { checkScore } from "../utils/boardUtil";
 
 const Board = () => {
   const boardSize = 3;
   const boardSquares = Array(boardSize * boardSize).fill();
-  const [boardTiles, setboardTiles] = useState(boardSquares);
+  const [boardTiles, setBoardTiles] = useState(boardSquares);
   const [player, setPlayer] = useState("circle");
   const [won, setWon] = useState(null);
   const [reset, setReset] = useState(false);
@@ -14,34 +14,12 @@ const Board = () => {
 
   const message = `${player} is playing!`;
 
-  const checkScore = () => {
-    const winningCombs = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-
-    winningCombs.forEach((array, index) => {
-      let circleWin = array.every((bt) => boardTiles[bt] === "circle");
-      let crossWin = array.every((bt) => boardTiles[bt] === "cross");
-
-      if (circleWin) {
-        setWon("circle won!!");
-        setWinningCombClass(`comb${index + 1}`);
-      } else if (crossWin) {
-        setWon("cross won!!");
-        setWinningCombClass(`comb${index + 1}`);
-      }
-    });
-  };
-
   useEffect(() => {
-    checkScore();
+    const result = checkScore(boardTiles);
+    if (result) {
+      setWon(result.winner);
+      setWinningCombClass(result.winningCombClass);
+    }
   }, [boardTiles]);
 
   useEffect(() => {
@@ -54,14 +32,14 @@ const Board = () => {
     if (!won) {
       const newBoardTiles = [...boardTiles];
       newBoardTiles[index] = player;
-      setboardTiles(newBoardTiles);
+      setBoardTiles(newBoardTiles);
       setPlayer(player === "circle" ? "cross" : "circle");
     }
   };
 
   const handleRestart = (e) => {
     e.preventDefault();
-    setboardTiles(boardSquares);
+    setBoardTiles(boardSquares);
     setPlayer("circle");
     setWon(null);
     setReset(true);
@@ -75,7 +53,7 @@ const Board = () => {
           {boardTiles.map((s, index) => (
             <Square
               key={index}
-              setSquares={setboardTiles}
+              setSquares={setBoardTiles}
               id={index}
               player={player}
               setPlayer={setPlayer}

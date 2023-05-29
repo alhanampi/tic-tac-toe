@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Pangolin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 
 .circle svg {
   color: rgb(79, 136, 157);
@@ -67,21 +67,21 @@
 .winline.comb4 {
   rotate: 90deg;
   top: 50%;
-  left: 24%;
+  left: 30%;
   transform: translate(0%, -50%);
 }
 
 .winline.comb5 {
   rotate: 90deg;
   top: 50%;
-  left: 34%;
+  left: 38%;
   transform: translate(0%, -50%);
 }
 
 .winline.comb6 {
   rotate: 90deg;
   top: 50%;
-  left: 44.5%;
+  left: 46%;
   transform: translate(0%, -50%);
 }
 
@@ -119,4 +119,56 @@ button {
 button:hover {
   background-color: rgb(79, 136, 157);
   border-color: rgb(79, 136, 157);
+}
+
+@media (max-width: 768px) {
+  .winline {
+    width: 300px;
+  }
+  
+  .winline.comb1,
+  .winline.comb2,
+  .winline.comb3 {
+    top: 40%;
+    left: 50%;
+  }
+  
+  .winline.comb4,
+  .winline.comb5,
+  .winline.comb6 {
+    top: 50%;
+    left: 25%;
+  }
+  
+  .winline.comb7,
+  .winline.comb8 {
+    top: 50%;
+    left: 20%;
+  }
+}
+
+@media (max-width: 480px) {
+  .winline {
+    width: 200px;
+  }
+  
+  .winline.comb1,
+  .winline.comb2,
+  .winline.comb3 {
+    top: 45%;
+    left: 50%;
+  }
+  
+  .winline.comb4,
+  .winline.comb5,
+  .winline.comb6 {
+    top: 50%;
+    left: 20%;
+  }
+  
+  .winline.comb7,
+  .winline.comb8 {
+    top: 50%;
+    left: 15%;
+  }
 }
